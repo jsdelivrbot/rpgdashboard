@@ -24,7 +24,7 @@ const authenticatedNav = (
 export default class Navbar extends Component {
     render() {
         return(
-            <nav>
+            <nav className='row header'>
                 <ul>
                     
                 </ul>

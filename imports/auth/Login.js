@@ -42,7 +42,7 @@ export default class Login extends Component {
                     {this.state.error ? <p>{this.state.error}</p> : undefined}
                     <input ref='email' type='email' placeholder='Email'/>
                     <input ref='password' type="password" placeholder='Password'/>
-                    <button>Login</button>
+                    <button className='btn small solid'>Login</button>
                 </form>
                 <Link to='/signup'>Need an account?</Link>
             </div>
