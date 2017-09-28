@@ -5,12 +5,14 @@ Designed to be a homebrew version of Roll20, but designed for smaller games firs
 ### Road map
 
 - [x] User creation
-- [ ] Campaign creation
+- [x] Campaign creation
+  - [ ] View game overview as DM
+    - [ ] DM can edit layout of overview !important
+    - [ ] DM can add fields/parameters for controlling game
   - [ ] Invite Users to campain
   - [ ] Player can create character sheet template for campaign
     - [ ] Player can view/edit Character info real-time
     - [ ] Player can make dice rolls based on character sheet (Much maths yo)
-  - [ ] View party overview as DM/GM
 - [ ] Campaign state storage? (Should be easy with MongoDB)
 - [ ] Player can 'Export' player character to another Campaign
 [More features to be added]
