@@ -9,7 +9,9 @@ export default class Login extends Component {
             error: ''
         }
     }
-    onSubmit() {
+    
+    onSubmit(e) {
+        e.preventDefault();
         const email = this.refs.email.value.trim();
         const password = this.refs.password.value.trim();
 
