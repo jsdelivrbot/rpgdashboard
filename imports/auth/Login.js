@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
 import {Meteor} from 'meteor/meteor';
+import React, {Component} from 'react';
+import {Link} from 'react-router';
 
 export default class Login extends Component {
     constructor(props) {
@@ -27,6 +28,10 @@ export default class Login extends Component {
                     })
                 }
             })
+        } else {
+            this.setState({
+                error: 'Please fill out both form fields!'
+            })
         }
     }
     render() {
@@ -39,6 +44,7 @@ export default class Login extends Component {
                     <input ref='password' type="password" placeholder='Password'/>
                     <button>Login</button>
                 </form>
+                <Link to='/signup'>Need an account?</Link>
             </div>
         )
     }
