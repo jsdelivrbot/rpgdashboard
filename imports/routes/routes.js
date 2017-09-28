@@ -39,14 +39,14 @@ export const onAuthChange = (isAuthenticated) => {
 //If a user goes to unauthenticatedPage
 const onEnterPublicPage = () => {
     if (Meteor.userId()) {
-        browserHistory.push('/profile');
+        browserHistory.replace('/profile');
     }
 }
 
 //If a user goes to authenticatedPage
 const onEnterPrivatePage = () => {
     if(!Meteor.userId()) {
-        browserHistory.push('/login')
+        browserHistory.replace('/login')
     }
 }
 
@@ -57,7 +57,9 @@ export const router = (
                 <Route path='/login' component={Login} onEnter={onEnterPublicPage} />
                 <Route path='/signup' component={Signup} onEnter={onEnterPublicPage} />
                 <Route path='/profile' component={Profile} onEnter={onEnterPrivatePage} />
-                {CampaignRoutes}
+                <Route path='/campaign' onEnter={onEnterPrivatePage}>
+                    {CampaignRoutes}
+                </Route>
             </div>
         </Router>
     );

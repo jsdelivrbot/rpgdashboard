@@ -5,7 +5,7 @@ import {Route} from 'react-router';
 import CreateCampaign from '../ui/campaigns/CreateCampaign';
 
 export const CampaignRoutes = (
-    <Route path='/campaign' >
+    <div>
         <Route path='new' component={CreateCampaign} />
-    </Route>
+    </div>
 )
