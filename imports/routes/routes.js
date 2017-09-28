@@ -7,6 +7,7 @@ import Home from '../ui/Home'
 import Login from '../auth/Login'
 import Signup from '../auth/Signup'
 import Profile from '../ui/Profile'
+import {CampaignRoutes} from './campaignRoutes'
 
 //Setting stage for Javascript routing
 window.history = browserHistory;
@@ -56,6 +57,7 @@ export const router = (
                 <Route path='/login' component={Login} onEnter={onEnterPublicPage} />
                 <Route path='/signup' component={Signup} onEnter={onEnterPublicPage} />
                 <Route path='/profile' component={Profile} onEnter={onEnterPrivatePage} />
+                {CampaignRoutes}
             </div>
         </Router>
     );
