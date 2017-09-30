@@ -6,7 +6,7 @@ import {Router, Route, browserHistory} from 'react-router'
 import Home from '../ui/Home'
 import Login from '../auth/Login'
 import Signup from '../auth/Signup'
-import Profile from '../ui/Profile'
+import Profile from '../ui/profile/Profile'
 import {CampaignRoutes} from './campaignRoutes'
 
 //Setting stage for Javascript routing

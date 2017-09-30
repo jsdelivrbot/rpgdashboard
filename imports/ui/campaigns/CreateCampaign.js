@@ -2,13 +2,13 @@ import {Meteor} from 'meteor/meteor';
 import React, {Component} from 'react';
 import {browserHistory} from 'react-router';
 
-import {Campaign} from '../../api/campaigns';
+import {Campaigns} from '../../api/campaigns';
 
 export default class CreateCampaign extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            error: 'Error'
+            error: ''
         }
     }
     createCampaign(e) {
@@ -19,7 +19,10 @@ export default class CreateCampaign extends Component {
         //I get the _createdBy var without an input field to 
         //mitigate potential user fiddling
         if (_campaignName && _createdBy) {
-            Campaign.insert({_campaignName, _createdBy}, (err, result) => {
+
+            //TODO: replace this with a Meteor.method
+
+            Campaigns.insert({_campaignName, _createdBy}, (err, result) => {
                 console.log('Error:', err, 'Results:', result);
                 if (err) {
                     this.setState({
@@ -29,13 +32,14 @@ export default class CreateCampaign extends Component {
                     //'result' returns the value for the new post
 
                     //Pushing browser to newly created campaign
-                    browserHistory.push(`/campaign/id/${result}`)
+                    // browserHistory.push(`/campaign/id/${result}`)
                 }
             });
         }
     }
     render() {
         return (
+            //TODO: Move all this garbage to a sub component
             <form onSubmit={this.createCampaign.bind(this)}>
                 <div className='row'>
                     <div className='col-1-3 space'/>
