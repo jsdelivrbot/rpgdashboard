@@ -32,7 +32,7 @@ export default class CreateCampaign extends Component {
                     //'result' returns the value for the new post
 
                     //Pushing browser to newly created campaign
-                    // browserHistory.push(`/campaign/id/${result}`)
+                    browserHistory.push(`/campaign/id/${result}/overview`)
                 }
             });
         }

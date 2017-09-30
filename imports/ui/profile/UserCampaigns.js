@@ -24,7 +24,7 @@ export default class UserCampaigns extends Component {
     }
     componentWillUnmount() {
         console.log('UserCampaigns did unmount')
-        this.campaignsTracker.stop
+        this.campaignsTracker.stop();
     }
     render() {
         return(
