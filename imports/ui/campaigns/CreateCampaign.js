@@ -20,7 +20,7 @@ export default class CreateCampaign extends Component {
         //mitigate potential user fiddling
         if (_campaignName && _createdBy) {
 
-            //TODO: replace this with a Meteor.method
+            //TODO: replace this with a Meteor.call
 
             Campaigns.insert({_campaignName, _createdBy}, (err, result) => {
                 console.log('Error:', err, 'Results:', result);

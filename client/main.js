@@ -3,8 +3,8 @@ import {Tracker} from 'meteor/tracker';
 import React from 'react'
 import ReactDOM from 'react-dom';
 
-import {router, onAuthChange} from '../imports/routes/routes';
-
+import {onAuthChange} from '../imports/routes/routes';
+import App from '../imports/ui/App';
 
 //Auto auth checker
 Tracker.autorun(() => {
@@ -13,5 +13,5 @@ Tracker.autorun(() => {
 })
 
 Meteor.startup(() => {
-  ReactDOM.render(router, document.getElementById('app'));
+  ReactDOM.render(<App />, document.getElementById('app'));
 })
