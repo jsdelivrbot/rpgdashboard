@@ -2,6 +2,8 @@ import {Meteor} from 'meteor/meteor';
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
+import {browserHistory} from '../history/BrowserHistory'
+
 export default class Login extends Component {
     constructor(props) {
         super(props);
@@ -9,6 +11,7 @@ export default class Login extends Component {
         this.state = {
             error: ''
         }
+        console.log(browserHistory.location)
     }
     
     onSubmit(e) {

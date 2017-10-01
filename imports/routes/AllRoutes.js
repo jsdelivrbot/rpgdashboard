@@ -22,35 +22,18 @@ export const onEnterPublicPage = () => {
 //If a user goes to authenticatedPage
 export const onEnterPrivatePage = () => {
     if(!Meteor.userId()) {
-        return <Redirect to='/login' />
+        browserHistory.replaceState({ test: browserHistory.location.pathname}, '/login')
     }
 }
 
 export const AllRoutes = (props) => {
-    console.log(props)
     return(
         <Switch>
             <div className='container'>
                 <Route path='/' exact component={Home} />
-                {/*
-                * These 'render' props are to replace react-router v3's onEnter props
-                * Only neccessary on Specifically auth/non-auth routes. Like /home is fine
-                * because everyone can go there whenever, but /profile or /login are only for logged in
-                * non-logged in users
-                */}
-                <Route path='/login' render={() => {
-                    onEnterPublicPage();
-                    return <Login />
-                }} />
-
-                <Route path='/signup' render={() => {
-                    onEnterPublicPage();
-                    return <Signup />
-                }} />
-                <Route path='/profile' render={() => {
-                    onEnterPrivatePage();
-                    return <Profile />
-                }} />
+                <Route path='/login' component={Login} />
+                <Route path='/signup' component={Signup}/>
+                <Route path='/profile' component={Profile}/>
                 <Route path='/campaign'>
                     {CampaignRoutes}
                 </Route>

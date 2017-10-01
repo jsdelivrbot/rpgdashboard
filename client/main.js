@@ -3,7 +3,8 @@ import {Tracker} from 'meteor/tracker';
 import React from 'react'
 import ReactDOM from 'react-dom';
 
-import {onAuthChange, router} from '../imports/routes/routes';
+import {router} from '../imports/routes/routes';
+import {onAuthChange} from '../imports/auth/AuthHandler'
 import App from '../imports/ui/App';
 
 //Auto auth checker

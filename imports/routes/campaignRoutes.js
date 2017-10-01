@@ -11,17 +11,7 @@ import Overview from '../ui/campaigns/gm/Overview'
 
 export const CampaignRoutes = (
     <div>
-        <Route path='/campaign/new' render={() => {
-            console.log()
-            //TODO: Figure out why onEnterPrivate page breaks, but this doesn't...
-            if (!Meteor.user()) {
-                return <Redirect to='/login' />
-            }
-            return <CreateCampaign />
-        }} />
-        <Route path='/campaign/id/:id/overview' render={() => {
-            onEnterPrivatePage();
-            return <Overview />
-        }} />
+        <Route path='/campaign/new' component={CreateCampaign} />
+        <Route path='/campaign/id/:id/overview' component={Overview}/>
     </div>
 )
