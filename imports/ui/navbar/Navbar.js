@@ -6,8 +6,9 @@ export default class Navbar extends Component {
             <div className="row header">
                 <div className="section">
                     <nav>
+                        {/*TODO: Fix this stupid navbar*/}
                         <label htmlFor="menu-toggle" id="menu-toggle-label">
-                            <input type="checkbox" name="" id="menu-toggle"/>
+                            <span className="item-menu"></span>
                         </label>
                         <ul className="menu">
                             Test
