@@ -2,9 +2,7 @@ import React from 'react';
 import {createBrowserHistory} from 'history';
 
 import {logout} from '../../auth/Logout';
-
-let browserHistory = createBrowserHistory();
-window.history = browserHistory
+import {browserHistory} from '../../history/BrowserHistory';
 
 export const UserOptions = () => {
     return (

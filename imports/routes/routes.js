@@ -12,7 +12,8 @@ console.log(browserHistory)
 
 //Only logged-in users can go here
 const authenticatedRoutes = [
-    '/profile'
+    '/profile',
+    '/campaign'
 ];
 
 //Only guest users can go here

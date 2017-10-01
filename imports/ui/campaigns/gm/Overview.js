@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import {Campaigns} from '../../../api/campaigns';
 import OverviewFrame from './overview-components/OverviewFrame';
 
+//TODO: Make this an importable function for anywhere, and convert to Bootstrap
 const Loading = () => {
     return (
         <div className='row'>
@@ -25,10 +26,11 @@ export default class Overview extends Component {
         }
     }
     componentDidMount() {
+        console.log(this.props);
         //TODO: Replace this with a secure Publication/Subscription
         this.campaignStatus = Tracker.autorun(() => {
             //Get info for current campaign
-            let ActiveCampaign = Campaigns.find({'_id' : this.props.params.id}).fetch();
+            let ActiveCampaign = Campaigns.find({'_id' : this.props.match.params.id}).fetch();
             this.setState({ActiveCampaign}, () => console.log(this.state));
         })
     }

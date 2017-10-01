@@ -1,6 +1,8 @@
 import {Meteor} from 'meteor/meteor';
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
+
+import {browserHistory} from '../history/BrowserHistory';
 
 import App from '../ui/App';
 import Navbar from '../ui/navbar/Navbar';
@@ -11,16 +13,16 @@ import Profile from '../ui/profile/Profile'
 import {CampaignRoutes} from './campaignRoutes'
 
 //If a user goes to unauthenticatedPage
-const onEnterPublicPage = () => {
+export const onEnterPublicPage = () => {
     if (Meteor.userId()) {
-        return browserHistory.replace('/profile');
+        return <Redirect to='/profile' />;
     }
 }
 
 //If a user goes to authenticatedPage
-const onEnterPrivatePage = () => {
+export const onEnterPrivatePage = () => {
     if(!Meteor.userId()) {
-        browserHistory.replace('/login')
+        return <Redirect to='/login' />
     }
 }
 
@@ -28,16 +30,31 @@ export const AllRoutes = (props) => {
     console.log(props)
     return(
         <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path='/login' render={() => {
-                onEnterPublicPage();
-                return <Login />
-            }} />
-            <Route path='/signup' component={Signup} onEnter={onEnterPublicPage} />
-            <Route path='/profile' component={Profile} onEnter={onEnterPrivatePage} />
-            <Route path='/campaign' onEnter={onEnterPrivatePage}>
-                {CampaignRoutes}
-            </Route>
+            <div className='container'>
+                <Route path='/' exact component={Home} />
+                {/*
+                * These 'render' props are to replace react-router v3's onEnter props
+                * Only neccessary on Specifically auth/non-auth routes. Like /home is fine
+                * because everyone can go there whenever, but /profile or /login are only for logged in
+                * non-logged in users
+                */}
+                <Route path='/login' render={() => {
+                    onEnterPublicPage();
+                    return <Login />
+                }} />
+
+                <Route path='/signup' render={() => {
+                    onEnterPublicPage();
+                    return <Signup />
+                }} />
+                <Route path='/profile' render={() => {
+                    onEnterPrivatePage();
+                    return <Profile />
+                }} />
+                <Route path='/campaign'>
+                    {CampaignRoutes}
+                </Route>
+            </div>
         </Switch>
     )
 }

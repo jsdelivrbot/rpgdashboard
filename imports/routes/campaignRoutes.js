@@ -1,5 +1,9 @@
+import {Meteor} from 'meteor/meteor';
 import React from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Redirect} from 'react-router-dom';
+
+//User auth from routes.js
+import {onEnterPrivatePage}  from './AllRoutes'
 
 //Campaign component imports
 import CreateCampaign from '../ui/campaigns/CreateCampaign';
@@ -7,7 +11,17 @@ import Overview from '../ui/campaigns/gm/Overview'
 
 export const CampaignRoutes = (
     <div>
-        <Route path='new' component={CreateCampaign} />
-        <Route path='id/:id/overview' component={Overview} />
+        <Route path='/campaign/new' render={() => {
+            console.log()
+            //TODO: Figure out why onEnterPrivate page breaks, but this doesn't...
+            if (!Meteor.user()) {
+                return <Redirect to='/login' />
+            }
+            return <CreateCampaign />
+        }} />
+        <Route path='/campaign/id/:id/overview' render={() => {
+            onEnterPrivatePage();
+            return <Overview />
+        }} />
     </div>
 )

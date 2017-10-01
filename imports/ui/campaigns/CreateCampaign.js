@@ -1,7 +1,7 @@
 import {Meteor} from 'meteor/meteor';
 import React, {Component} from 'react';
-import {createBrowserHistory} from 'history';
 
+import {browserHistory} from '../../history/BrowserHistory';
 import {Campaigns} from '../../api/campaigns';
 
 export default class CreateCampaign extends Component {

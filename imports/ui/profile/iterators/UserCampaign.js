@@ -5,8 +5,7 @@ export const mapUserCampaigns = (campaigns) => {
         let renderedCampaigns = campaigns.map((campaign) => {
             return (
                 <div key={campaign._id} className='row'>
-                    <div className="col-1-4 space" />
-                    <h3 className='col-1-3'>{campaign._campaignName}</h3>
+                    <h3 className='col-md-offset-1'>{campaign._campaignName}</h3>
                 </div>
             )
         })
@@ -14,8 +13,7 @@ export const mapUserCampaigns = (campaigns) => {
     } else {
         return (
             <div className="row">
-                <div className="col-1-4 space" />
-                <h3 className="col-1-3">No Campaigns Yet</h3>
+                <h3 className="col-md-offset-1">No Campaigns Yet</h3>
             </div>
         )
     }
