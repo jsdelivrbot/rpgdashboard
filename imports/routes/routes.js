@@ -8,10 +8,11 @@ import {AllRoutes} from './AllRoutes';
 
 //Setting stage for Javascript routing
 window.history = browserHistory;
-console.log(browserHistory)
 
 export const router = (
+    <div className='container'>
         <Router history={browserHistory}>
             <AllRoutes />
         </Router>
+    </div>
     );

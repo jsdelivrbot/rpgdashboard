@@ -29,15 +29,13 @@ export const onEnterPrivatePage = () => {
 export const AllRoutes = (props) => {
     return(
         <Switch>
-            <div className='container'>
-                <Route path='/' exact component={Home} />
-                <Route path='/login' component={Login} />
-                <Route path='/signup' component={Signup}/>
-                <Route path='/profile' component={Profile}/>
-                <Route path='/campaign'>
-                    {CampaignRoutes}
-                </Route>
-            </div>
+            <Route path='/' exact component={Home} />
+            <Route path='/login' component={Login} />
+            <Route path='/signup' component={Signup}/>
+            <Route path='/profile' component={Profile}/>
+            <Route path='/campaign'>
+                {CampaignRoutes}
+            </Route>
         </Switch>
     )
 }
