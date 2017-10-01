@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 
 import {router} from '../imports/routes/routes';
 import {onAuthChange} from '../imports/auth/AuthHandler'
-import App from '../imports/ui/App';
 
 //Auto auth checker
 Tracker.autorun(() => {

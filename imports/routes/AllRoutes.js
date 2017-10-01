@@ -4,7 +4,6 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 
 import {browserHistory} from '../history/BrowserHistory';
 
-import App from '../ui/App';
 import Navbar from '../ui/navbar/Navbar';
 import Home from '../ui/Home'
 import Login from '../auth/Login'
@@ -25,7 +24,8 @@ export const onEnterPrivatePage = () => {
         browserHistory.replaceState({ test: browserHistory.location.pathname}, '/login')
     }
 }
-
+/*TODO: Maybe move auth links into separate route file to limit 
+clutter on this page. LOOKING AT YOU 10 IMPORTS! */
 export const AllRoutes = (props) => {
     return(
         <Switch>
