@@ -1,6 +1,6 @@
 import {Meteor} from 'meteor/meteor';
 import React, {Component} from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 export default class Login extends Component {
     constructor(props) {
@@ -37,6 +37,7 @@ export default class Login extends Component {
     render() {
         return(
             <div>
+                Hello
                 <form onSubmit={this.onSubmit.bind(this)}>
                     <h3>Login</h3>
                     {this.state.error ? <p>{this.state.error}</p> : undefined}

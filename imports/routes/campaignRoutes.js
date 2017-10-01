@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route} from 'react-router';
+import {Route} from 'react-router-dom';
 
 //Campaign component imports
 import CreateCampaign from '../ui/campaigns/CreateCampaign';

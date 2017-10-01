@@ -1,6 +1,6 @@
 import {Meteor} from 'meteor/meteor';
 import React, {Component} from 'react';
-import {browserHistory} from 'react-router';
+import {createBrowserHistory} from 'history';
 
 import {Campaigns} from '../../api/campaigns';
 

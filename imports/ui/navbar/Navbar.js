@@ -14,7 +14,9 @@ export default class Navbar extends Component {
                             
                         <ul className="menu">
                             <li className='float-right'>
-                                <Link to='/'>Test</Link>
+                                <ul>
+                                    <Link to='/'>Test</Link>
+                                </ul>
                             </li>
                         </ul>
                     </nav>

@@ -11,7 +11,7 @@ export default class Profile extends Component {
     render() {
         return(
             <div>
-                {UserOptions}
+                <UserOptions />
                 <UserCampaigns />
             </div>
         )

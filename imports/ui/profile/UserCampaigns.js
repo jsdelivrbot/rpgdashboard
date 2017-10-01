@@ -30,8 +30,7 @@ export default class UserCampaigns extends Component {
         return(
             <div>
                 <div className="row">
-                    <div className="col-1-5 space"/>
-                    <h3 className="col-1-3">Your Campaigns</h3>
+                    <h3 className="col-md-offset-3">Your Campaigns</h3>
                 </div>
                 {mapUserCampaigns(this.state.campaigns)}
             </div>
