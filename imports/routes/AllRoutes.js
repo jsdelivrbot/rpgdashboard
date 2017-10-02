@@ -28,14 +28,18 @@ export const onEnterPrivatePage = () => {
 clutter on this page. LOOKING AT YOU 10 IMPORTS! */
 export const AllRoutes = (props) => {
     return(
-        <Switch>
-            <Route path='/' exact component={Home} />
-            <Route path='/login' component={Login} />
-            <Route path='/signup' component={Signup}/>
-            <Route path='/profile' component={Profile}/>
-            <Route path='/campaign'>
-                {CampaignRoutes}
-            </Route>
-        </Switch>
+        <div>
+            {/*Navbar gets rendered regardless of route!*/}
+            <Navbar />
+            <Switch>
+                <Route path='/' exact component={Home} />
+                <Route path='/login' component={Login} />
+                <Route path='/signup' component={Signup}/>
+                <Route path='/profile' component={Profile}/>
+                <Route path='/campaign'>
+                    {CampaignRoutes}
+                </Route>
+            </Switch>
+        </div>
     )
 }
