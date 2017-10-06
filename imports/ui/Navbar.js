@@ -1,24 +1,16 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
-const unauthenticatedNav = (
-    <div>
-        <li>
-            <button>Login</button>
-        </li>
-        <li>
-            <button>Signup</button>
-        </li>
-    </div>
-)
+
 const authenticatedNav = (
     <div>
-        <li>
-            <button>Logout</button>
-        </li>
-        <li>
-            <button>Profile</button>
-        </li>
-    </div>
+    <li>
+        <button>Logout</button>
+    </li>
+    <li>
+        <button>Profile</button>
+    </li>
+</div>
 )
 
 export default class Navbar extends Component {
