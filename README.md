@@ -23,6 +23,11 @@ Designed to be an open source alternative to Roll20. Truly community driven with
 
 ### How to contribute
 
+#### To highlight ideas, bugs, or suggestions:
+
+Open an issue and label it appropriately, we'll run through them and address as many as possible
+
+#### To contribute directly
 1. Clone the repo
   * `git clone git@github.com:DukeFerdinand/rpgdashboard.git [PROJECT FOLDER]`
 
