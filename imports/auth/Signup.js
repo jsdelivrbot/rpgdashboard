@@ -12,6 +12,7 @@ export default class Signup extends Component {
     }
     onSubmit(e) {
         e.preventDefault();
+        const username = this.refs.username.value.trim();
         const email = this.refs.email.value.trim();
         const password= this.refs.password.value.trim();
 
@@ -22,6 +23,7 @@ export default class Signup extends Component {
         }
 
         Accounts.createUser({
+            username,
             email,
             password
         }, (err) => {
@@ -43,6 +45,7 @@ export default class Signup extends Component {
                 <form onSubmit={this.onSubmit.bind(this)} noValidate>
                     <h3>Signup</h3>
                     {this.state.error ? <p>{this.state.error}</p> : undefined}
+                    <input ref='username' type='text' placeholder='Username'/>
                     <input ref='email' type='email' placeholder='Email'/>
                     <input ref='password' type="password" placeholder='Password'/>
                     <button>Signup</button>
