@@ -8,6 +8,7 @@ export default class CombatOverview extends Component {
     render() {
         return(
             <div className='row'>
+                
                 <GMNotes/>
                 <PlayerOverview/>
                 <CombatOrder/>
