@@ -10,10 +10,8 @@ export default class NoteInput extends Component {
     submitHandler(e) {
         e.preventDefault();
         if (this.state.newNote.length > 0) {
-            console.log(this.state.newNote.trim())
-            this.setState({
-                newNote: ''
-            })
+            let note = this.state.newNote.trim();
+            this.props.addGMNote({note});
         }
     }
     onChangeHandler() {
