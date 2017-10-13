@@ -6,8 +6,7 @@ import {browserHistory} from '../history/BrowserHistory'
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 
-import reduxStore from '../redux/reducers/reduxStore'
-
+import reduxStore from '../redux/reducers/index'
 import {AllRoutes} from './AllRoutes';
 
 //Setting stage for Javascript routing
