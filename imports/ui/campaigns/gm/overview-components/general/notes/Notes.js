@@ -1,24 +1,33 @@
 import {Meteor} from 'meteor/meteor'
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
 
 import NoteInput from './NoteInput'
+import {RenderNotes} from './RenderNotes';
 
-export default class Notes extends Component {
+class Notes extends Component {
     constructor(props) {
         super(props);
+        console.log(props)
         this.state = {
 
         }
     }
-    submitHandler(e) {
-        e.preventDefault();
-        console.log(this.refs.NoteInput.nodeValue.trim());
-    }
     render() {
         return(
-            <div>
-                <NoteInput submitHandler={this.submitHandler()}/>
+            <div className='col-xs-12'>
+                <RenderNotes notes={this.props.notes}/>
+                <NoteInput/>
             </div>
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        notes: state.GMNotes
+    }
+}
+
+export default connect(mapStateToProps)(Notes)
