@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 
 import TitleBar from './TitleBar';
-import GMNotes from './general/GMNotes';
-import PlayerOverview from './general/PlayerOverview';
-import CombatOrder from './combat-specific/CombatOrder';
+import GeneralOverview from './GeneralOverview';
 
 export default class OverviewFrame extends Component {
     constructor(props) {
@@ -14,11 +12,9 @@ export default class OverviewFrame extends Component {
         return (
             <div>
                 <TitleBar title={this.Campaign._campaignName}/>
-                <div className='row'>
+                <div>
                     {/*TODO: extract these to separate component for conditional rendering*/}
-                    <PlayerOverview/>
-                    <CombatOrder/>
-                    <GMNotes />
+                    <GeneralOverview/>
                 </div>
             </div>
         )
