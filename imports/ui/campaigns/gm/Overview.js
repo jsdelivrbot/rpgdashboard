@@ -9,10 +9,7 @@ import OverviewFrame from './overview-components/OverviewFrame';
 const Loading = () => {
     return (
         <div className='row'>
-            <div className="col-1-3 space" />
-            <div className='col-1-3'>
-                <div className='load large' />
-            </div>
+            <h1>Loading</h1>
 
         </div>
     )
@@ -30,6 +27,7 @@ export default class Overview extends Component {
         //TODO: Replace this with a secure Publication/Subscription
         this.campaignStatus = Tracker.autorun(() => {
             //Get info for current campaign
+            Meteor.subscribe('user-campaigns');
             let ActiveCampaign = Campaigns.find({'_id' : this.props.match.params.id}).fetch();
             this.setState({ActiveCampaign}, () => console.log(this.state));
         })
