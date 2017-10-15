@@ -24,7 +24,8 @@ export default class Overview extends Component {
     }
     componentDidMount() {
         console.log(this.props);
-        //TODO: Replace this with a secure Publication/Subscription
+        // This .subscribe is here AND the Profile component in case the user goes directly to this page, 
+        // there was an issue where the subscribe wasn't in effect if the user went directly here
         this.campaignStatus = Tracker.autorun(() => {
             //Get info for current campaign
             Meteor.subscribe('user-campaigns');
