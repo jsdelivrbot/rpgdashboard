@@ -1,3 +1,4 @@
+import {Meteor} from 'meteor/meteor';
 import {Tracker} from 'meteor/tracker';
 import React, {Component} from 'react';
 
@@ -13,17 +14,17 @@ export default class UserCampaigns extends Component {
         }
     }
     componentDidMount() {
-        console.log('Component did mount: UserCampaigns')
+        //Subscribing to user-craeted campaigns for security
+        Meteor.subscribe('user-campaigns');
         this.campaignsTracker = Tracker.autorun(() => {
             let campaigns = Campaigns.find().fetch();
-            console.log(campaigns)
             this.setState({
                 campaigns 
             })
           })
     }
     componentWillUnmount() {
-        console.log('UserCampaigns did unmount')
+        //Stopping tracker to avoid infinite trackers
         this.campaignsTracker.stop();
     }
     render() {
