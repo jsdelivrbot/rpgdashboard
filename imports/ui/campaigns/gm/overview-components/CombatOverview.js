@@ -11,9 +11,10 @@ export default class CombatOverview extends Component {
             <div className='row'>
                 
                 <GMNotes/>
+                <DiceRoller/>
                 <PlayerOverview/>
                 <CombatOrder/>
-                <DiceRoller/>
+                
             </div>
         )
     }
