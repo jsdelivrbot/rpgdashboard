@@ -1,13 +1,14 @@
 # rpgdashboard
 
-Designed to be an open source alternative to Roll20. Truly community driven with no subscription fees.
+Meant to be used for both in-person campaigns and remote campaigns, or even a mixture of both. Designed to be completely unoppinionated on what system you use, so DnD, Pathfinder, homebrew systems, etc. will all be supported in the long run.
 
 ### Road map
 
 - [x] User creation
 - [x] Simple (enough) route protection
 - [x] Campaign creation
-  - [ ] View game overview as DM
+  - [x] View game overview as DM
+    - [ ] DM control ideas: GM Notes, Dice Roller, Party Status, Combat Order, Map?, Random NPC Generator, Weather Conditions
     - [ ] DM can edit layout of overview !important
     - [ ] DM can add fields/parameters for controlling game
   - [ ] Invite Users to campain
