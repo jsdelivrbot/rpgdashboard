@@ -8,7 +8,7 @@ Meant to be used for both in-person campaigns and remote campaigns, or even a mi
 - [x] Simple (enough) route protection
 - [x] Campaign creation
   - [x] View game overview as DM
-    - [ ] DM control ideas: GM Notes, Dice Roller, Party Status, Combat Order, Map?, Random NPC Generator, Weather Conditions
+    - [ ] DM control ideas: GM Notes, Dice Roller, Party Status, Combat Order, Map?, Random NPC Generator, Weather Conditions, Plot Point Visualizer?
     - [ ] DM can edit layout of overview !important
     - [ ] DM can add fields/parameters for controlling game
   - [ ] Invite Users to campain
