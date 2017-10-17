@@ -10,7 +10,7 @@ export const rollDice = (dice) => {
 const calculate = (range, modifier = 0, numberOfDice = 1) => {
     let results = [];
     for (i = 1; i <= numberOfDice; i++) {
-        results.push((Math.floor(Math.random() * range) + 1) + modifier);
+        results.push((Math.floor(Math.random() * range) + 1 + modifier));
     }
     return results.reduce((a,b) => a + b, 0);
 }

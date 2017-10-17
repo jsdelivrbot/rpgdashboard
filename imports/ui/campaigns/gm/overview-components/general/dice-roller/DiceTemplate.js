@@ -24,7 +24,7 @@ export class DiceTemplate extends Component {
                     <div className='col-xs-9'>
                         <div className="input-group">
                             {/*Number of dice to roll*/}
-                            <input onChange={() => {this.setState({number: this.refs.number.value})}} type="number" className="form-control" placeholder='Number' defaultValue='1' ref='number'/>
+                            <input onChange={() => {this.setState({number: +this.refs.number.value})}} type="number" className="form-control" placeholder='Number' defaultValue='1' ref='number'/>
                             <span className="input-group-btn">
                                 <button onClick={
                                     () => {
@@ -34,7 +34,7 @@ export class DiceTemplate extends Component {
                                 className="btn btn-secondary">Roll d20</button>
                             </span>
                             {/*Modifier*/}
-                            <input onChange={() => {this.setState({modifier: this.refs.modifier.value})}} type="number" className='form-control' placeholder='Modifier' defaultValue='0' ref='modifier'/>
+                            <input onChange={() => {this.setState({modifier: +this.refs.modifier.value})}} type="number" className='form-control' placeholder='Modifier' defaultValue='0' ref='modifier'/>
                         </div>
                     </div>
                     {/*Result of dice roll*/}
